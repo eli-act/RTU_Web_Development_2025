@@ -193,13 +193,13 @@ footer {
 /* Desktop layout */
 @media (min-width: 992px) {
     body {
-        
+        grid-template-columns: 2fr 3fr 1fr;
+        grid-template-rows: 2fr 2fr 6fr 2fr;
         grid-template-areas:
-        "header"
-        "hero"
-        "focus"
-        "sidebar"
-        "footer";
+            "header header header"
+            "hero hero desktop-ad"
+            "focus focus sidebar"
+            "footer footer footer";
     }
     /* Change header */
     header {
@@ -214,28 +214,25 @@ footer {
 
     /* Change hero */
     .hero {
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr;
         grid-template-areas:
-        "hero-feature hero-action desktop-ad"
+        "hero-feature hero-action";
     }
+
     .hero .hero-feature, .desktop-ad, .sidebar {
-        display: block;
+    display: block;
     }
 
     /* Change focus */
     .focus {
-        grid-template-rows: 1fr 2.5fr;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 2fr 4fr;
+        grid-template-rows: 6fr;
         grid-template-areas:
-        "article-feature mobile-ad"
-        "article-listing article-listing";
+        "article-feature article-listing";
     }
+
     .focus .mobile-ad {
         display: none;
-    }
-    /* Change sidebar */
-    .sidebar {
-        display: grid;
     }
 
 }
